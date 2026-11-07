@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — CRISP Luxury Fashion</title>
+  <meta name="description" content="Secure checkout flow for your CRISP garments. Worldwide tracked delivery with insured courier.">
+  <link rel="icon" type="image/png" href="assets/images/prod-9.jpg">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-promo">
+        <span>🔒 256-Bit SSL Encrypted & Insured Checkout</span>
+      </div>
+      <div class="topbar-actions">
+        <a href="shop.html" class="topbar-link">← Return to Shop</a>
+        <a href="styleguide.html" class="topbar-link">Figma Spec</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        CRISP<span class="logo-dot">.</span>
+      </a>
+      <div style="font-size: 0.8125rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.75rem;">
+        <span style="color: var(--color-primary); font-weight: 600;">1. Bag</span> →
+        <span style="color: var(--color-primary); font-weight: 600;">2. Delivery</span> →
+        <span style="color: var(--color-primary); font-weight: 600;">3. Payment</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Main -->
+  <main class="section-padding">
+    <div class="container">
+      <div class="checkout-grid">
+        
+        <!-- Left Column: Shipping & Payment Form -->
+        <div>
+          <form id="checkoutForm" onsubmit="handlePlaceOrder(event)">
+            
+            <!-- Box 1: Customer Contact -->
+            <div class="checkout-box">
+              <h4>1. Contact Information</h4>
+              <div class="form-group">
+                <label for="cEmail">Email Address (for order tracking & receipt)</label>
+                <input type="email" id="cEmail" class="form-control" placeholder="alexandra.morris@example.com" value="soxibs48@users.noreply.github.com" required>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--color-text-muted);">
+                <input type="checkbox" id="cNewsletter" checked>
+                <label for="cNewsletter">Keep me informed on upcoming private capsule drops</label>
+              </div>
+            </div>
+
+            <!-- Box 2: Shipping Address -->
+            <div class="checkout-box">
+              <h4>2. Shipping Address</h4>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="cFirst">First Name</label>
+                  <input type="text" id="cFirst" class="form-control" value="Soxib" required>
+                </div>
+                <div class="form-group">
+                  <label for="cLast">Last Name</label>
+                  <input type="text" id="cLast" class="form-control" value="Abdukomilov" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cAddress">Street Address & Apartment</label>
+                <input type="text" id="cAddress" class="form-control" placeholder="124 Rue Saint-Honoré, Apt 4B" value="Amir Temur Avenue, 26" required>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="cCity">City</label>
+                  <input type="text" id="cCity" class="form-control" value="Tashkent" required>
+                </div>
+                <div class="form-group">
+                  <label for="cPostal">Postal / ZIP Code</label>
+                  <input type="text" id="cPostal" class="form-control" value="100000" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cCountry">Country / Region</label>
+                <select id="cCountry" class="form-control">
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="US">United States</option>
+                  <option value="FR">France</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="DE">Germany</option>
+                  <option value="IT">Italy</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Box 3: Delivery Method -->
+            <div class="checkout-box">
+              <h4>3. Delivery Options</h4>
+              <div class="payment-options-group">
+                <label class="payment-option-label">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="deliveryMethod" value="0" checked onchange="updateShippingMethod(0)">
+                    <div>
+                      <strong>Standard Eco Courier (3–5 Business Days)</strong>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted);">Carbon-neutral ground transit</p>
+                    </div>
+                  </div>
+                  <span>FREE</span>
+                </label>
+
+                <label class="payment-option-label">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="deliveryMethod" value="15" onchange="updateShippingMethod(15)">
+                    <div>
+                      <strong>Express Air Dispatch (1–2 Business Days)</strong>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted);">Priority courier with real-time SMS tracking</p>
+                    </div>
+                  </div>
+                  <span>+$15.00</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Box 4: Payment -->
+            <div class="checkout-box">
+              <h4>4. Secure Payment Method</h4>
+              <div class="payment-options-group" style="margin-bottom: 1.5rem;">
+                <label class="payment-option-label">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="paymentMethod" value="card" checked>
+                    <strong>Credit or Debit Card</strong>
+                  </div>
+                  <div style="display: flex; gap: 0.35rem;">
+                    <span class="payment-pill">VISA</span>
+                    <span class="payment-pill">MC</span>
+                  </div>
+                </label>
+
+                <label class="payment-option-label">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="paymentMethod" value="paypal">
+                    <strong>PayPal Instant Checkout</strong>
+                  </div>
+                  <span class="payment-pill">PAYPAL</span>
+                </label>
+              </div>
+
+              <!-- Card Inputs -->
+              <div id="cardFields">
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label>
+                  <input type="text" id="cardNumber" class="form-control" placeholder="4532 •••• •••• 8921" value="4532 8900 1234 8921">
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="cardExpiry">Expiration (MM/YY)</label>
+                    <input type="text" id="cardExpiry" class="form-control" placeholder="08/28" value="08/28">
+                  </div>
+                  <div class="form-group">
+                    <label for="cardCvc">Security CVC</label>
+                    <input type="text" id="cardCvc" class="form-control" placeholder="382" value="382">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="height: 52px; font-size: 0.9375rem;">
+              Complete Order & Authorize Payment
+            </button>
+          </form>
+        </div>
+
+        <!-- Right Column: Order Summary Card -->
+        <aside>
+          <div class="checkout-box" style="position: sticky; top: 100px;">
+            <h4>Order Summary</h4>
+            
+            <div id="checkoutItemsList" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; max-height: 320px; overflow-y: auto;">
+              <!-- Injected by script -->
+            </div>
+
+            <!-- Promo Box -->
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-border-light);">
+              <input type="text" id="checkoutPromoInput" class="form-control" placeholder="Promo code (CRISP20)" style="flex: 1;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="applyCheckoutPromo()">Apply</button>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="drawer-totals">
+              <div class="drawer-total-row">
+                <span>Subtotal</span>
+                <span id="coSubtotal">$0.00</span>
+              </div>
+              <div class="drawer-total-row row-discount" id="coDiscountRow" style="display: none;">
+                <span>Discount (CRISP20)</span>
+                <span id="coDiscount">-$0.00</span>
+              </div>
+              <div class="drawer-total-row">
+                <span>Shipping</span>
+                <span id="coShipping">FREE</span>
+              </div>
+              <div class="drawer-total-row row-grand">
+                <span>Total Due</span>
+                <span id="coTotal">$0.00</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">
+              By completing your order, you agree to our 30-Day Return Policy and Terms of Sale. Taxes are computed and included.
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="crisp-modal" id="orderSuccessModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog quick-view-dialog" style="max-width: 540px; padding: 3rem 2.5rem; text-align: center;">
+      <div style="width: 64px; height: 64px; background: #e8f5e9; color: var(--color-success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <span class="section-subtitle" style="color: var(--color-success);">Order Successfully Confirmed!</span>
+      <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: bold; margin: 0.5rem 0 1rem;">
+        Thank You For Shopping Crisp.
+      </h2>
+      <p style="color: var(--color-text-muted); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.5rem;">
+        Your order reference is <strong id="orderRefCode" style="color: var(--color-primary);">#CRISP-94821</strong>. We have dispatched a confirmation receipt with real-time tracking details to your inbox.
+      </p>
+
+      <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); padding: 1.25rem; border-radius: var(--radius-xs); margin-bottom: 2rem; text-align: left; font-size: 0.8125rem;">
+        <div><strong>Estimated Dispatch:</strong> Tomorrow at 10:00 AM</div>
+        <div style="margin-top: 0.35rem;"><strong>Courier Service:</strong> DHL Express Worldwide Courier</div>
+        <div style="margin-top: 0.35rem;"><strong>Destination:</strong> Tashkent, Uzbekistan</div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="index.html" class="btn btn-primary">Return to Home</a>
+        <a href="shop.html" class="btn btn-outline">Explore More Pieces</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div class="footer-copy">
+          © 2026 CRISP Apparel Studio. All rights reserved. 26-Amaliy Ish (Figma node-id: 69:3253).
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    let shippingAdditional = 0;
+
+    function renderCheckoutPage() {
+      const container = document.getElementById('checkoutItemsList');
+      if (!container || typeof CrispCart === 'undefined') return;
+
+      const items = CrispCart.items;
+      if (items.length === 0) {
+        container.innerHTML = `<p style="color: var(--color-text-muted);">Your bag is empty. Please add items from the shop.</p>`;
+      } else {
+        container.innerHTML = items.map(item => `
+          <div style="display: grid; grid-template-columns: 56px 1fr auto; gap: 0.875rem; align-items: center;">
+            <img src="${item.image}" alt="${item.name}" style="width: 56px; height: 70px; object-fit: cover; border-radius: var(--radius-xs);">
+            <div>
+              <h6 style="font-size: 0.875rem; font-weight: 600; line-height: 1.3;">${item.name}</h6>
+              <span style="font-size: 0.75rem; color: var(--color-text-muted);">${item.color} • ${item.size} × ${item.quantity}</span>
+            </div>
+            <strong style="font-size: 0.875rem;">$${(item.price * item.quantity).toFixed(2)}</strong>
+          </div>
+        `).join('');
+      }
+
+      updateTotals();
+    }
+
+    function updateShippingMethod(cost) {
+      shippingAdditional = cost;
+      document.getElementById('coShipping').textContent = cost === 0 ? 'FREE' : `+$${cost.toFixed(2)}`;
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const subtotal = CrispCart.getSubtotal();
+      const discount = CrispCart.getDiscount();
+      const total = Math.max(0, subtotal - discount + shippingAdditional);
+
+      document.getElementById('coSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+      
+      const discountRow = document.getElementById('coDiscountRow');
+      if (discount > 0) {
+        discountRow.style.display = 'flex';
+        document.getElementById('coDiscount').textContent = `-$${discount.toFixed(2)}`;
+      } else {
+        discountRow.style.display = 'none';
+      }
+
+      document.getElementById('coTotal').textContent = `$${total.toFixed(2)}`;
+    }
+
+    function applyCheckoutPromo() {
+      const input = document.getElementById('checkoutPromoInput');
+      if (input && input.value) {
+        CrispCart.applyPromo(input.value);
+        updateTotals();
+      }
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const randNum = Math.floor(10000 + Math.random() * 90000);
+      document.getElementById('orderRefCode').textContent = `#CRISP-${randNum}`;
+      document.getElementById('orderSuccessModal').classList.add('is-open');
+      document.body.classList.add('modal-locked');
+      CrispCart.showToast("Order placed successfully!", "check");
+      // Clear cart
+      CrispCart.items = [];
+      CrispCart.saveCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCheckoutPage);
+  </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRISP — Design System & Figma Specimen (node-id: 69:3253)</title>
+  <meta name="description" content="Crisp Design System Specification, typography scale, color tokens, and UI kit components from Figma node 69:3253.">
+  <link rel="icon" type="image/png" href="assets/images/prod-9.jpg">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .spec-section {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .spec-header {
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 1rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .spec-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .token-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      padding: 1rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      background: #ffffff;
+    }
+    .token-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    .token-swatch {
+      height: 70px;
+      border-radius: var(--radius-xs);
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: flex-end;
+      padding: 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body style="background-color: #faf9f6;">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        CRISP<span class="logo-dot">.</span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop Collection</a>
+        <a href="product.html?id=1" class="nav-link">Featured Product</a>
+        <a href="blog.html" class="nav-link">Editorial Journal</a>
+        <a href="checkout.html" class="nav-link">Checkout</a>
+        <a href="styleguide.html" class="nav-link is-active is-badge">
+          Figma Tokens
+          <span class="nav-tag">SPEC</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://www.figma.com/file/pyriaNMaPDrvmzSicUinkm/Crisp?type=design&node-id=69%3A3253" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          Open Figma (69:3253) ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spec Intro Banner -->
+  <div style="background-color: #111111; color: #ffffff; padding: 3.5rem 0 3rem;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+        <div>
+          <span class="section-subtitle" style="color: #ffcc00;">Design Specification • Node 69:3253</span>
+          <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: bold; line-height: 1.15; margin-bottom: 0.75rem;">
+            CRISP Design System Tokens
+          </h1>
+          <p style="color: #b0b0b5; max-width: 650px; font-size: 0.9375rem; line-height: 1.6;">
+            A complete, pixel-perfect translation of the Crisp UI Kit for Figma. Includes typography hierarchy, color tokens, button variants, form states, and interactive specimen previews.
+          </p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 1.25rem 1.75rem; border-radius: var(--radius-xs);">
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #aaa;">Assignment Reference</div>
+          <div style="font-size: 1.125rem; font-weight: bold; margin-top: 0.25rem;">26-Amaliy Ish</div>
+          <div style="font-size: 0.75rem; color: #999; margin-top: 0.25rem;">Figma: pyriaNMaPDrvmzSicUinkm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="section-padding">
+    <div class="container">
+
+      <!-- Specimen 1: Color Tokens -->
+      <section class="spec-section">
+        <div class="spec-header">
+          <div>
+            <h3>1. Color Palette Tokens</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Click any token card to copy the HEX code to your clipboard.</p>
+          </div>
+          <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--color-primary);">9 Tokens</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.25rem;">
+          <!-- Black -->
+          <div class="token-card" onclick="copyToken('#111111', '--color-primary')">
+            <div class="token-swatch" style="background-color: #111111; color: #ffffff;">#111111</div>
+            <strong style="display: block; font-size: 0.875rem;">Primary Black</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-primary)</span>
+          </div>
+
+          <!-- Pure White -->
+          <div class="token-card" onclick="copyToken('#FFFFFF', '--color-bg')">
+            <div class="token-swatch" style="background-color: #ffffff; color: #111111;">#FFFFFF</div>
+            <strong style="display: block; font-size: 0.875rem;">Pure White</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-bg)</span>
+          </div>
+
+          <!-- Neutral Off-White -->
+          <div class="token-card" onclick="copyToken('#F8F8F8', '--color-bg-secondary')">
+            <div class="token-swatch" style="background-color: #f8f8f8; color: #111111;">#F8F8F8</div>
+            <strong style="display: block; font-size: 0.875rem;">Off-White Surface</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-bg-secondary)</span>
+          </div>
+
+          <!-- Neutral Warm Ecru -->
+          <div class="token-card" onclick="copyToken('#F7F5F2', '--color-bg-hero')">
+            <div class="token-swatch" style="background-color: #f7f5f2; color: #111111;">#F7F5F2</div>
+            <strong style="display: block; font-size: 0.875rem;">Warm Linen Canvas</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">Hero & Editorial BG</span>
+          </div>
+
+          <!-- Border Gray -->
+          <div class="token-card" onclick="copyToken('#E6E6E8', '--color-border')">
+            <div class="token-swatch" style="background-color: #e6e6e8; color: #111111;">#E6E6E8</div>
+            <strong style="display: block; font-size: 0.875rem;">Border Gray</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-border)</span>
+          </div>
+
+          <!-- Text Muted -->
+          <div class="token-card" onclick="copyToken('#6E6E73', '--color-text-muted')">
+            <div class="token-swatch" style="background-color: #6e6e73; color: #ffffff;">#6E6E73</div>
+            <strong style="display: block; font-size: 0.875rem;">Text Muted</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-text-muted)</span>
+          </div>
+
+          <!-- Accent Sale Coral -->
+          <div class="token-card" onclick="copyToken('#E53935', '--color-accent-sale')">
+            <div class="token-swatch" style="background-color: #e53935; color: #ffffff;">#E53935</div>
+            <strong style="display: block; font-size: 0.875rem;">Accent Sale Coral</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-accent-sale)</span>
+          </div>
+
+          <!-- Accent Hot Orange -->
+          <div class="token-card" onclick="copyToken('#FF5722', '--color-accent-hot')">
+            <div class="token-swatch" style="background-color: #ff5722; color: #ffffff;">#FF5722</div>
+            <strong style="display: block; font-size: 0.875rem;">Accent Hot Orange</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-accent-hot)</span>
+          </div>
+
+          <!-- Success Sage -->
+          <div class="token-card" onclick="copyToken('#2E7D32', '--color-success')">
+            <div class="token-swatch" style="background-color: #2e7d32; color: #ffffff;">#2E7D32</div>
+            <strong style="display: block; font-size: 0.875rem;">In-Stock Green</strong>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">var(--color-success)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specimen 2: Typography Hierarchy -->
+      <section class="spec-section">
+        <div class="spec-header">
+          <div>
+            <h3>2. Typography Scale & Fonts</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Pairing Playfair Display (Luxury Editorial Serif) with Inter (Precision Sans).</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          <div style="display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid var(--color-border-light); padding-bottom: 1.5rem;">
+            <div>
+              <strong>Display Hero</strong>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted);">Playfair Display • 64px / 1.1</div>
+            </div>
+            <div style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; line-height: 1.1;">
+              Timeless silhouettes for the <em>modern woman</em>.
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid var(--color-border-light); padding-bottom: 1.5rem;">
+            <div>
+              <strong>Heading 1 (H1)</strong>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted);">Playfair Display • 36px</div>
+            </div>
+            <div style="font-family: var(--font-display); font-size: 2.25rem; font-weight: bold;">
+              Summer in the City: Effortless Tailoring
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid var(--color-border-light); padding-bottom: 1.5rem;">
+            <div>
+              <strong>Heading 2 (H2)</strong>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted);">Playfair Display • 28px</div>
+            </div>
+            <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: bold;">
+              New Arrivals & Signature Editions
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid var(--color-border-light); padding-bottom: 1.5rem;">
+            <div>
+              <strong>Body Regular</strong>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted);">Inter • 15px / 1.6</div>
+            </div>
+            <div style="font-size: var(--fs-body); color: var(--color-text-muted); max-width: 680px; line-height: 1.6;">
+              Crafted from pure European linen and organic cotton. Designed with minimal lines and fluid tailoring for sun-soaked days and relaxed evenings.
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; align-items: baseline;">
+            <div>
+              <strong>Button & Captions</strong>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted);">Inter • 13px / 0.12em Upper</div>
+            </div>
+            <div style="font-size: var(--fs-btn); font-weight: 600; text-transform: uppercase; letter-spacing: var(--ls-btn);">
+              EXPLORE COLLECTION • ADD TO BAG • QUICK VIEW
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specimen 3: UI Buttons & Badges -->
+      <section class="spec-section">
+        <div class="spec-header">
+          <div>
+            <h3>3. Interactive UI Elements</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Buttons, badges, size pills, and quantity controls.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+          <button class="btn btn-primary">Primary Button</button>
+          <button class="btn btn-outline">Outline Button</button>
+          <button class="btn btn-primary btn-sm">Small Button</button>
+          <button class="btn btn-primary btn-lg">Large Hero CTA</button>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+          <span class="product-badge badge-sale" style="position: static;">SALE -20%</span>
+          <span class="product-badge badge-new" style="position: static;">NEW IN</span>
+          <span class="product-badge badge-hot" style="position: static;">HOT ITEM</span>
+          <span class="payment-pill">PAYMENT BADGE</span>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <div class="quantity-stepper">
+            <button type="button" onclick="CrispCart.showToast('Minus clicked')">−</button>
+            <span>1</span>
+            <button type="button" onclick="CrispCart.showToast('Plus clicked')">+</button>
+          </div>
+
+          <div style="display: flex; gap: 0.35rem;">
+            <button class="size-pill-btn is-selected">S</button>
+            <button class="size-pill-btn">M</button>
+            <button class="size-pill-btn">L</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specimen 4: Figma Canvas Screenshot -->
+      <section class="spec-section">
+        <div class="spec-header">
+          <div>
+            <h3>4. Figma Master Canvas Preview</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Crisp (node-id: 69:3253) — All boards extracted from the official Figma file.</p>
+          </div>
+          <a href="figma_preview.png" target="_blank" class="btn btn-outline btn-sm">Open High-Res Image ↗</a>
+        </div>
+
+        <div style="border: 1px solid var(--color-border); border-radius: var(--radius-xs); overflow: hidden; background: #ffffff;">
+          <img src="figma_preview.png" alt="Figma Master Canvas Crisp node-id: 69:3253" style="width: 100%; display: block;">
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div class="footer-copy">
+          © 2026 CRISP Apparel Studio. All rights reserved. 26-Amaliy Ish (Figma node-id: 69:3253).
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function copyToken(hex, varName) {
+      navigator.clipboard.writeText(hex).then(() => {
+        CrispCart.showToast(`Copied ${hex} (${varName}) to clipboard!`, "check");
+      }).catch(() => {
+        CrispCart.showToast(`Selected ${hex}`, "check");
+      });
+    }
+  </script>
+</body>
+</html>
